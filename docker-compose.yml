@@ -9,5 +9,5 @@ services:
     expose:
       - 80
     volumes:
-      - ~/web/html:/usr/share/nginx/html
-      - ~/nginx/nginx.conf/:/etc/nginx/conf.d/
+      - ./web/html:/usr/share/nginx/html
+      - ./nginx/:/etc/nginx/conf.d/
