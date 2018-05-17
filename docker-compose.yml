@@ -11,3 +11,14 @@ services:
     volumes:
       - ./web/html:/usr/share/nginx/html
       - ./nginx/:/etc/nginx/conf.d/
+    depends_on:
+      - nodejs1
+  nodejs1:
+    image: node:9.11.1-alpine
+    environment:
+      NODE_ENV: production
+    working_dir: /home/app
+    restart: always
+    volumes:
+          - ./nodejs:/home/app
+    command: ["node","index"]
