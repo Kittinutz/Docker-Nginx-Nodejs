@@ -8,5 +8,5 @@ services:
     volumes:
       - ./web/html:/var/www/html/web
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-    environment:
-      VIRTUAL_HOSTg
+    ports:
+      - 80:80
