@@ -3,10 +3,11 @@ services:
   nginx:
     image: nginx:1.13.12-alpine
     container_name: nginx
+    ports:
+      - "80:80"
+
     expose:
       - 80
     volumes:
-      - ./web/html:/var/www/html/web
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-    ports:
-      - 80:80
+      - ~/web/html:/usr/share/nginx/html
+      - ~/nginx/nginx.conf/:/etc/nginx/conf.d/
