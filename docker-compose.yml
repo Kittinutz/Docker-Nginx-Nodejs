@@ -14,6 +14,8 @@ services:
       - ./web/html:/usr/share/nginx/html
       - ./nginx/:/etc/nginx/conf.d/
       - ./node/:/app/
+      - ./certs:/etc/letsencrypt
+      - ./certs-data:/data/letsencrypt
     depends_on:
       - nodejsreact
     environment:
