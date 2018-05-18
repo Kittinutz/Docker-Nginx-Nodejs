@@ -5,6 +5,7 @@ services:
     container_name: nginx
     ports:
       - "80:80"
+      - "433:433"
 
     expose:
       - 80
@@ -14,6 +15,8 @@ services:
       - ./node/:/app/
     depends_on:
       - nodejsreact
+    environment:
+      - VIRTUAL_HOST=rabbitmansion.dev
   nodejsreact:
     image: node:9.11.1-alpine
     container_name: nodejs
