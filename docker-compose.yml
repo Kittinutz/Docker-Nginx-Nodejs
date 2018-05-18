@@ -11,15 +11,21 @@ services:
     volumes:
       - ./web/html:/usr/share/nginx/html
       - ./nginx/:/etc/nginx/conf.d/
+      - ./node/:/app/
     depends_on:
-      - nodejs
-  nodejs:
+      - nodejsreact
+  nodejsreact:
     image: node:9.11.1-alpine
     container_name: nodejs
     environment:
       NODE_ENV: production
-    working_dir: /home/app
+    working_dir: /home/app/serversiderender
     restart: always
     volumes:
-          - ./nodejs:/home/app
-    command: ["node","index"]
+          - ./node/serversiderender:/home/app/serversiderender
+
+    expose:
+      - 3000
+    ports:
+      - "3000:3000"
+    command: "npm start"
