@@ -9,6 +9,7 @@ services:
 
     expose:
       - 80
+      - 433
     volumes:
       - ./web/html:/usr/share/nginx/html
       - ./nginx/:/etc/nginx/conf.d/
