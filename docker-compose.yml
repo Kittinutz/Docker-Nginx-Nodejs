@@ -11,11 +11,10 @@ services:
       - 80
       - 433
     volumes:
-      - ./web/html:/usr/share/nginx/html
+      - ./www/example.com:/usr/share/nginx/example.com
       - ./nginx/:/etc/nginx/conf.d/
       - ./node/:/app/
-      - ./certs:/etc/letsencrypt
-      - ./certs-data:/data/letsencrypt
+      - ./letsencrypt/well-known:/www/letsencrypt
     depends_on:
       - nodejsreact
     environment:
