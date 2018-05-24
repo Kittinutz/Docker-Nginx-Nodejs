@@ -20,6 +20,11 @@ services:
       - nodejsreact
     environment:
       - VIRTUAL_HOST=rabbitmansion.dev
+    networks:
+      - docker-network
+  networks:
+    docker-network:
+    driver:bridge
   nodejsreact:
     image: node:9.11.1-alpine
     container_name: nodejs
