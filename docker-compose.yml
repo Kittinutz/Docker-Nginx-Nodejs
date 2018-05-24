@@ -15,6 +15,7 @@ services:
       - ./nginx/:/etc/nginx/conf.d/
       - ./node/:/app/
       - ./letsencrypt/well-known:/www/letsencrypt
+      - ./etc/letsencrypt/:/etc/letsencrypt/
     depends_on:
       - nodejsreact
     environment:
