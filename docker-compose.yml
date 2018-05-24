@@ -14,7 +14,7 @@ services:
       - ./www/example.com:/usr/share/nginx/html
       - ./nginx/:/etc/nginx/conf.d/
       - ./node/:/app/
-      - ./letsencrypt/well-known:/www/letsencrypt/
+      - ./letsencrypt/well-known:/www/letsencrypt
       - ./etc/letsencrypt/:/etc/letsencrypt/
     depends_on:
       - nodejsreact
