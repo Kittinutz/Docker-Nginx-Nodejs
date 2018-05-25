@@ -14,8 +14,6 @@ services:
       - ./etc/letsencrypt/live/rabbitmansion.com/fullchain.pem:/etc/letsencrypt/live/rabbitmansion.com/fullchain.pem
       - ./etc/letsencrypt/live/rabbitmansion.com/privkey.pem:/etc/letsencrypt/live/rabbitmansion.com/privkey.pem
       - ./node/:/app/
-    environment:
-      - VIRTUAL_HOST=rabbitmansion.com
     networks:
       - docker-network
 
