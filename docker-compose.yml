@@ -1,6 +1,7 @@
 version: '3.1'
 services:
   nginx:
+
     image: nginx:1.13.12-alpine
     container_name: nginx
     ports:
@@ -13,8 +14,9 @@ services:
       - ./www/rabbitmansion.com:/usr/share/nginx/html
       - ./nginx/:/etc/nginx/conf.d/
       - ./letsencrypt/well-known:/www/letsencrypt
-      - ./dh-param:/etc/ssl/certs
-      - ./etc/letsencrypt/live/rabbitmansion.com/:/etc/letsencrypt/live/rabbitmansion.com/
+      - ./dh-param/dhparam-2048.pem:/etc/ssl/certs/dhparam-2048.pem
+      - ./etc/letsencrypt/live/rabbitmansion.com/fullchain.pem:/etc/letsencrypt/live/rabbitmansion.com/fullchain.pem
+      - ./etc/letsencrypt/live/rabbitmansion.com/privkey.pem:/etc/letsencrypt/live/rabbitmansion.com/privkey.pem
       - ./node/:/app/
 
   nodejsreact:
