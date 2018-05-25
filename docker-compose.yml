@@ -13,9 +13,11 @@ services:
     volumes:
       - ./www/rabbbitmansion.com:/usr/share/nginx/html
       - ./nginx/:/etc/nginx/conf.d/
-      - ./node/:/app/
       - ./letsencrypt/well-known:/www/letsencrypt
-      - /etc/letsencrypt/:/etc/letsencrypt/
+      - ./dh-param/dhparam-2048.pem:/etc/ssl/certs/dhparam-2048.pem
+      - ./etc/letsencrypt/live/rabbitmansion.com/fullchain.pem:/etc/letsencrypt/live/ohhaithere.com/fullchain.pem
+      - ./etc/letsencrypt/live/rabbitmansion.com/privkey.pem:/etc/letsencrypt/live/ohhaithere.com/privkey.pem
+      - ./node/:/app/
     depends_on:
       - nodejsreact
     environment:
