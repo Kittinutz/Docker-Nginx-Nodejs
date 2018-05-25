@@ -11,7 +11,7 @@ services:
       - 80
       - 433
     volumes:
-      - ./www/rabbbitmansion.com:/usr/share/nginx/html
+      - ./www/rabbitmansion.com:/usr/share/nginx/html
       - ./nginx/:/etc/nginx/conf.d/
       - ./letsencrypt/well-known:/www/letsencrypt
       - ./dh-param/dhparam-2048.pem:/etc/ssl/certs/dhparam-2048.pem
