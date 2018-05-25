@@ -6,10 +6,6 @@ services:
     ports:
       - "80:80"
       - "433:433"
-
-    expose:
-      - 80
-      - 433
     volumes:
       - ./www/rabbitmansion.com:/usr/share/nginx/html
       - ./nginx/:/etc/nginx/conf.d/
