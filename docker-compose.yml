@@ -21,7 +21,7 @@ services:
 
   networks:
     docker-network:
-    driver: bridge
+      driver: bridge
 
   nodejsreact:
     image: node:9.11.1-alpine
