@@ -7,6 +7,9 @@ services:
     ports:
       - "80:80"
       - "433:433"
+    expose:
+      - 443
+      - 80
     volumes:
       - ./www/rabbitmansion.com:/usr/share/nginx/html
       - ./nginx/:/etc/nginx/conf.d/
