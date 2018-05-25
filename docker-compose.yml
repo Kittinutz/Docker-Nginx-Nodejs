@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.1'
 services:
   nginx:
     image: nginx:1.13.12-alpine
@@ -14,12 +14,6 @@ services:
       - ./etc/letsencrypt/live/rabbitmansion.com/fullchain.pem:/etc/letsencrypt/live/rabbitmansion.com/fullchain.pem
       - ./etc/letsencrypt/live/rabbitmansion.com/privkey.pem:/etc/letsencrypt/live/rabbitmansion.com/privkey.pem
       - ./node/:/app/
-    networks:
-      - docker-network
-
-  networks:
-    docker-network:
-      driver: bridge
 
   nodejsreact:
     image: node:9.11.1-alpine
