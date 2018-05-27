@@ -18,7 +18,8 @@ services:
       - ./etc/letsencrypt/live/rabbitmansion.com/fullchain.pem:/etc/letsencrypt/live/rabbitmansion.com/fullchain.pem
       - ./etc/letsencrypt/live/rabbitmansion.com/privkey.pem:/etc/letsencrypt/live/rabbitmansion.com/privkey.pem
       - ./node/:/app/
-
+    depends_on:
+      - nodejsreact
   nodejsreact:
     image: node:9.11.1-alpine
     container_name: nodejs
