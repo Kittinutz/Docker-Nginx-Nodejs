@@ -22,7 +22,7 @@ services:
       - nodejsreact
   nodejsreact:
     image: node:9.11.1-alpine
-    container_name: nodejs
+    container_name: nodejsreact
     environment:
       NODE_ENV: production
     working_dir: /home/app/serversiderender
